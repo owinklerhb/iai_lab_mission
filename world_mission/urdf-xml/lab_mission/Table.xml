@@ -1,0 +1,213 @@
+<?xml version="1.0"?>
+<robot xmlns:sensor="http://playerstage.sourceforge.net/gazebo/xmlschema/#sensor"
+xmlns:controller="http://playerstage.sourceforge.net/gazebo/xmlschema/#controller"
+xmlns:interface="http://playerstage.sourceforge.net/gazebo/xmlschema/#interface"
+xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<!-- Table1 -->
+<macro name="Table1">
+
+<joint name="Table1_joint" type="fixed">
+<origin xyz="-200 -151.999 36.50023" rpy="0 0 0"/>
+<parent link="Table1_link"/>
+<child link="Table1_link"/>
+</joint>
+
+<link name="Table1_link">
+<visual>
+<!--origin xyz="16 0.0 0.0 " rpy="0 0 -1.5"/-->
+<geometry>
+<mesh filename="package://./Table_1.dae"/>
+</geometry>
+<material name="Grey"/>
+</visual>
+<collision>
+<!--origin xyz="16 0.0 0.0 " rpy="0 0 -1.5"/-->
+<geometry>
+<mesh filename="package://./Table_1.dae"/>
+</geometry>
+</collision>
+</link>
+
+<!-- Table2 -->
+<macro name="Table2">
+
+<joint name="Table2_joint" type="fixed">
+<origin xyz="-200 8.00101 36.50023" rpy="0 0 0"/>
+<parent link="Table2_link"/>
+<child link="Table2_link"/>
+</joint>
+
+<link name="Table2_link">
+<visual>
+<!--origin xyz="16 0.0 0.0 " rpy="0 0 -1.5"/-->
+<geometry>
+<mesh filename="package://./Table_2.dae"/>
+</geometry>
+<material name="Grey2"/>
+</visual>
+<collision>
+<!--origin xyz="16 0.0 0.0 " rpy="0 0 -1.5"/-->
+<geometry>
+<mesh filename="package://./Table_2.dae"/>
+</geometry>
+</collision>
+</link>
+
+<!-- Table3 -->
+<macro name="Table3">
+
+<joint name="Table3_joint" type="fixed">
+<origin xyz="-205 128.001 36.50023" rpy="0 0 0"/>
+<parent link="Table3_link"/>
+<child link="Table3_link"/>
+</joint>
+
+<link name="Table3_link">
+<visual>
+<!--origin xyz="16 0.0 0.0 " rpy="0 0 -1.5"/-->
+<geometry>
+<mesh filename="package://./Table_3.dae"/>
+</geometry>
+<material name="Grey"/>
+</visual>
+<collision>
+<!--origin xyz="16 0.0 0.0 " rpy="0 0 -1.5"/-->
+<geometry>
+<mesh filename="package://./Table_3.dae"/>
+</geometry>
+</collision>
+</link>
+
+<!-- Table4 -->
+<macro name="Table4">
+
+<joint name="Table4_joint" type="fixed">
+<origin xyz="-84.99796 133.004 36.50023" rpy="0 0 0"/>
+<parent link="Table4_link"/>
+<child link="Table4_link"/>
+</joint>
+
+<link name="Table4_link">
+<visual>
+<!--origin xyz="16 0.0 0.0 " rpy="0 0 -1.5"/-->
+<geometry>
+<mesh filename="package://./Table_4.dae"/>
+</geometry>
+<material name="Grey2"/>
+</visual>
+<collision>
+<!--origin xyz="16 0.0 0.0 " rpy="0 0 -1.5"/-->
+<geometry>
+<mesh filename="package://./Table_4.dae"/>
+</geometry>
+</collision>
+</link>
+
+<!-- Table5 -->
+<macro name="Table5">
+
+<joint name="Table5_joint" type="fixed">
+<origin xyz="55.00301 133.004 36.50023" rpy="0 0 0"/>
+<parent link="Table5_link"/>
+<child link="Table5_link"/>
+</joint>
+
+<link name="Table5_link">
+<visual>
+<!--origin xyz="16 0.0 0.0 " rpy="0 0 -1.5"/-->
+<geometry>
+<mesh filename="package://./Table_5.dae"/>
+</geometry>
+<material name="Grey"/>
+</visual>
+<collision>
+<!--origin xyz="16 0.0 0.0 " rpy="0 0 -1.5"/-->
+<geometry>
+<mesh filename="package://./Table_5.dae"/>
+</geometry>
+</collision>
+</link>
+
+<!-- Table6 -->
+<macro name="Table6">
+
+<joint name="Table6_joint" type="fixed">
+<origin xyz="175.003 133.004 36.50023" rpy="0 0 0"/>
+<parent link="Table6_link"/>
+<child link="Table6_link"/>
+</joint>
+
+<link name="Table6_link">
+<visual>
+<!--origin xyz="16 0.0 0.0 " rpy="0 0 -1.5"/-->
+<geometry>
+<mesh filename="package://./Table_6.dae"/>
+</geometry>
+<material name="Grey2"/>
+</visual>
+<collision>
+<!--origin xyz="16 0.0 0.0 " rpy="0 0 -1.5"/-->
+<geometry>
+<mesh filename="package://./Table_6.dae"/>
+</geometry>
+</collision>
+</link>
+
+<!-- Table7 -->
+<macro name="Table7">
+
+<joint name="Table7_joint" type="fixed">
+<origin xyz="41.49495 -188.982 42.50019" rpy="0 0 0"/>
+<parent link="Table7_link"/>
+<child link="Table7_link"/>
+</joint>
+
+<link name="Table7_link">
+<visual>
+<!--origin xyz="16 0.0 0.0 " rpy="0 0 -1.5"/-->
+<geometry>
+<mesh filename="package://./Table_7.dae"/>
+</geometry>
+<material name="Grey"/>
+</visual>
+<collision>
+<!--origin xyz="16 0.0 0.0 " rpy="0 0 -1.5"/-->
+<geometry>
+<mesh filename="package://./Table_7.dae"/>
+</geometry>
+</collision>
+</link>
+
+<!-- Table8 -->
+<macro name="Table8">
+
+<joint name="Table8_joint" type="fixed">
+<origin xyz="81.99936 384.973 36.50023" rpy="0 0 0"/>
+<parent link="Table8_link"/>
+<child link="Table8_link"/>
+</joint>
+
+<link name="Table8_link">
+<visual>
+<!--origin xyz="16 0.0 0.0 " rpy="0 0 -1.5"/-->
+<geometry>
+<mesh filename="package://./Table_8.dae"/>
+</geometry>
+<material name="Grey2"/>
+</visual>
+<collision>
+<!--origin xyz="16 0.0 0.0 " rpy="0 0 -1.5"/-->
+<geometry>
+<mesh filename="package://./Table_8.dae"/>
+</geometry>
+</collision>
+</link>
+
+
+<gazebo>
+<static>true</static>
+</gazebo>
+
+</macro>
+</robot>

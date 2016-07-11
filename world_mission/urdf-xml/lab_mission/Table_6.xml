@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<robot xmlns:sensor="http://playerstage.sourceforge.net/gazebo/xmlschema/#sensor"
+xmlns:controller="http://playerstage.sourceforge.net/gazebo/xmlschema/#controller"
+xmlns:interface="http://playerstage.sourceforge.net/gazebo/xmlschema/#interface"
+xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<!-- Table6 -->
+<macro name="Table6">
+
+<joint name="Table6_joint" type="fixed">
+<origin xyz="175.003 133.004 36.50023" rpy="0 0 0"/>
+<parent link="Table6_link"/>
+<child link="Table6_link"/>
+</joint>
+
+<link name="Table6_link">
+<visual>
+<!--origin xyz="16 0.0 0.0 " rpy="0 0 -1.5"/-->
+<geometry>
+<mesh filename="package://./Table_6.dae"/>
+</geometry>
+<material name="Grey2"/>
+</visual>
+<collision>
+<!--origin xyz="16 0.0 0.0 " rpy="0 0 -1.5"/-->
+<geometry>
+<mesh filename="package://./Table_6.dae"/>
+</geometry>
+</collision>
+</link>
+
+
+<gazebo>
+<static>true</static>
+</gazebo>
+
+</macro>
+</robot>

@@ -1,0 +1,635 @@
+<?xml version="1.0"?>
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY knowrob "http://knowrob.org/kb/knowrob.owl#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+<rdf:RDF xmlns="http://knowrob.org/kb/lab.owl#"
+    xml:base="http://knowrob.org/kb/lab.owl"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:map="http://knowrob.org/kb/lab.owl#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:knowrob="http://knowrob.org/kb/knowrob.owl#">
+    
+  <!--owl:Ontology rdf:about="http://knowrob.org/kb/galtelli_map.owl#">
+    <owl:imports rdf:resource="package://knowrob_common/owl/knowrob.owl"/>
+  </owl:Ontology-->
+  
+  
+  
+
+
+    <!-- http://ias.cs.tum.edu/kb/knowrob.owl#Vector -->
+
+  
+    <owl:Class rdf:about="http://knowrob.org/kb/knowrob.owl#Transformation"/>
+    <owl:DatatypeProperty rdf:about="http://knowrob.org/kb/knowrob.owl#quaternion"/>
+    <owl:DatatypeProperty rdf:about="http://knowrob.org/kb/knowrob.owl#translation"/>
+
+    <!-- GENERAL DEFS -->
+    <owl:ObjectProperty rdf:about="http://knowrob.org/kb/knowrob.owl#describedInMap"/>
+    <owl:DatatypeProperty rdf:about="http://knowrob.org/kb/knowrob.owl#depthOfObject"/>
+    <owl:DatatypeProperty rdf:about="http://knowrob.org/kb/knowrob.owl#heightOfObject"/>
+    <owl:DatatypeProperty rdf:about="http://knowrob.org/kb/knowrob.owl#widthOfObject"/>
+    <owl:DatatypeProperty rdf:about="http://knowrob.org/kb/knowrob.owl#vectorX"/>
+    <owl:DatatypeProperty rdf:about="http://knowrob.org/kb/knowrob.owl#vectorY"/>
+    <owl:DatatypeProperty rdf:about="http://knowrob.org/kb/knowrob.owl#vectorZ"/>
+    <owl:Class rdf:about="http://knowrob.org/kb/knowrob.owl#SemanticEnvironmentMap"/>
+    <owl:Class rdf:about="http://knowrob.org/kb/knowrob.owl#SemanticMapPerception"/>
+    <owl:Class rdf:about="http://knowrob.org/kb/knowrob.owl#TimePoint"/>
+    <owl:Class rdf:about="http://knowrob.org/kb/knowrob.owl#Vector"/>
+    <owl:DatatypeProperty rdf:about="&knowrob;pathToCadModel"/>
+  <!-- 
+    <owl:Class rdf:about="http://knowrob.org/kb/knowrob.owl#Vector"/>
+    <owl:Class rdf:about="http://www.knowrob.org/kb/iai-rescue.owl#RestingPlace"/>
+    <owl:Class rdf:about="http://www.knowrob.org/kb/iai-rescue.owl#DangerousArea"/>
+    <owl:Class rdf:about="http://www.knowrob.org/kb/iai-rescue.owl#ConiferForest"/>
+    <owl:Class rdf:about="http://www.knowrob.org/kb/iai-rescue.owl#MixedForest"/>
+    <owl:Class rdf:about="http://www.knowrob.org/kb/iai-rescue.owl#BroadLeavedForest"/>
+    <owl:Class rdf:about="http://www.knowrob.org/kb/iai-rescue.owl#HighVictimPropabilityRegion"/>
+ -->
+  <!-- Lab specific environment class defs -->
+
+<!-- Table 1 -->
+<owl:Class rdf:about="&knowrob;Table01"> 
+  <rdfs:subClassOf rdf:resource="&knowrob;SpatialThing-Localized"/> 
+   <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="&knowrob;pathToCadModel"/>
+      <owl:hasValue rdf:datatype="&xsd;string">package://iai_outdoor_models/models/Table_1.dae</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>   
+	<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&knowrob;heightOfObject"/>
+                <owl:hasValue rdf:datatype="&xsd;double">0.73</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>   
+	<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&knowrob;depthOfObject"/>
+                <owl:hasValue rdf:datatype="&xsd;double">0.90</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>   
+	<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&knowrob;widthOfObject"/>
+                <owl:hasValue rdf:datatype="&xsd;double">1.60</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>   
+
+  </owl:Class>
+
+<owl:NamedIndividual rdf:about="&knowrob;Table1">
+    <rdf:type rdf:resource="http://knowrob.org/kb/lab.owl#Table01"/>
+    <knowrob:describedInMap rdf:resource="http://knowrob.org/kb/lab.owl#LabMap"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="&knowrob;Transformation_Table_1">
+    <rdf:type rdf:resource="&knowrob;Transformation"/>
+    <knowrob:quaternion rdf:datatype="&xsd;string">1.0 0.0 0.0 0.0</knowrob:quaternion>
+    <knowrob:translation rdf:datatype="&xsd;string">-200 -151.999 36.50023</knowrob:translation>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="&knowrob;SemanticMapPerceptionTable1">
+    <rdf:type rdf:resource="&knowrob;SemanticMapPerception"/>
+    <knowrob:startTime rdf:resource="http://knowrob.org/kb/lab.owl#timepoint_0"/>
+    <knowrob:eventOccursAt rdf:resource="&knowrob;Transformation_Table_1"/>
+    <knowrob:objectActedOn rdf:resource="&knowrob;Table1"/>
+</owl:NamedIndividual>
+
+<!-- Table 2 -->
+<owl:Class rdf:about="&knowrob;Table02"> 
+  <rdfs:subClassOf rdf:resource="&knowrob;SpatialThing-Localized"/> 
+   <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="&knowrob;pathToCadModel"/>
+      <owl:hasValue rdf:datatype="&xsd;string">package://iai_outdoor_models/models/Table_2.dae</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>   
+	<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&knowrob;heightOfObject"/>
+                <owl:hasValue rdf:datatype="&xsd;double">0.73</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>   
+	<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&knowrob;depthOfObject"/>
+                <owl:hasValue rdf:datatype="&xsd;double">0.90</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>   
+	<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&knowrob;widthOfObject"/>
+                <owl:hasValue rdf:datatype="&xsd;double">1.60</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>   
+
+  </owl:Class>
+
+<owl:NamedIndividual rdf:about="&knowrob;Table2">
+    <rdf:type rdf:resource="http://knowrob.org/kb/lab.owl#Table02"/>
+    <knowrob:describedInMap rdf:resource="http://knowrob.org/kb/lab.owl#LabMap"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="&knowrob;Transformation_Table_2">
+    <rdf:type rdf:resource="&knowrob;Transformation"/>
+    <knowrob:quaternion rdf:datatype="&xsd;string">1.0 0.0 0.0 0.0</knowrob:quaternion>
+    <knowrob:translation rdf:datatype="&xsd;string">-200 8.00101 36.50023</knowrob:translation>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="&knowrob;SemanticMapPerceptionTable2">
+    <rdf:type rdf:resource="&knowrob;SemanticMapPerception"/>
+    <knowrob:startTime rdf:resource="http://knowrob.org/kb/lab.owl#timepoint_0"/>
+    <knowrob:eventOccursAt rdf:resource="&knowrob;Transformation_Table_2"/>
+    <knowrob:objectActedOn rdf:resource="&knowrob;Table2"/>
+</owl:NamedIndividual>
+
+<!-- Table 3 -->
+<owl:Class rdf:about="&knowrob;Table03"> 
+  <rdfs:subClassOf rdf:resource="&knowrob;SpatialThing-Localized"/> 
+   <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="&knowrob;pathToCadModel"/>
+      <owl:hasValue rdf:datatype="&xsd;string">package://iai_outdoor_models/models/Table_3.dae</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>   
+	<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&knowrob;heightOfObject"/>
+                <owl:hasValue rdf:datatype="&xsd;double">0.73</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>   
+	<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&knowrob;depthOfObject"/>
+                <owl:hasValue rdf:datatype="&xsd;double">0.80</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>   
+	<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&knowrob;widthOfObject"/>
+                <owl:hasValue rdf:datatype="&xsd;double">0.80</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>   
+
+<owl:NamedIndividual rdf:about="&knowrob;Table3">
+    <rdf:type rdf:resource="http://knowrob.org/kb/lab.owl#Table03"/>
+    <knowrob:describedInMap rdf:resource="http://knowrob.org/kb/lab.owl#LabMap"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="&knowrob;Transformation_Table_3">
+    <rdf:type rdf:resource="&knowrob;Transformation"/>
+    <knowrob:quaternion rdf:datatype="&xsd;string">1.0 0.0 0.0 0.0</knowrob:quaternion>
+    <knowrob:translation rdf:datatype="&xsd;string">-205 128.001 36.50023</knowrob:translation>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="&knowrob;SemanticMapPerceptionTable3">
+    <rdf:type rdf:resource="&knowrob;SemanticMapPerception"/>
+    <knowrob:startTime rdf:resource="http://knowrob.org/kb/lab.owl#timepoint_0"/>
+    <knowrob:eventOccursAt rdf:resource="&knowrob;Transformation_Table_3"/>
+    <knowrob:objectActedOn rdf:resource="&knowrob;Table3"/>
+</owl:NamedIndividual>
+
+<!-- Table 4 -->
+  </owl:Class>
+<owl:Class rdf:about="&knowrob;Table04"> 
+  <rdfs:subClassOf rdf:resource="&knowrob;SpatialThing-Localized"/> 
+   <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="&knowrob;pathToCadModel"/>
+      <owl:hasValue rdf:datatype="&xsd;string">package://iai_outdoor_models/models/Table_4.dae</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>   
+	<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&knowrob;heightOfObject"/>
+                <owl:hasValue rdf:datatype="&xsd;double">0.73</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>   
+	<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&knowrob;depthOfObject"/>
+                <owl:hasValue rdf:datatype="&xsd;double">1.60</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>   
+	<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&knowrob;widthOfObject"/>
+                <owl:hasValue rdf:datatype="&xsd;double">0.90</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>   
+
+  </owl:Class>
+
+<owl:NamedIndividual rdf:about="&knowrob;Table4">
+    <rdf:type rdf:resource="http://knowrob.org/kb/lab.owl#Table04"/>
+    <knowrob:describedInMap rdf:resource="http://knowrob.org/kb/lab.owl#LabMap"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="&knowrob;Transformation_Table_4">
+    <rdf:type rdf:resource="&knowrob;Transformation"/>
+    <knowrob:quaternion rdf:datatype="&xsd;string">1.0 0.0 0.0 0.0</knowrob:quaternion>
+    <knowrob:translation rdf:datatype="&xsd;string">-84.99796 133.004 36.50023</knowrob:translation>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="&knowrob;SemanticMapPerceptionTable4">
+    <rdf:type rdf:resource="&knowrob;SemanticMapPerception"/>
+    <knowrob:startTime rdf:resource="http://knowrob.org/kb/lab.owl#timepoint_0"/>
+    <knowrob:eventOccursAt rdf:resource="&knowrob;Transformation_Table_4"/>
+    <knowrob:objectActedOn rdf:resource="&knowrob;Table4"/>
+</owl:NamedIndividual>
+
+
+<!-- Table 5 -->
+<owl:Class rdf:about="&knowrob;Table05"> 
+  <rdfs:subClassOf rdf:resource="&knowrob;SpatialThing-Localized"/> 
+   <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="&knowrob;pathToCadModel"/>
+      <owl:hasValue rdf:datatype="&xsd;string">package://iai_outdoor_models/models/Table_5.dae</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>   
+	<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&knowrob;heightOfObject"/>
+                <owl:hasValue rdf:datatype="&xsd;double">0.73</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>   
+	<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&knowrob;depthOfObject"/>
+                <owl:hasValue rdf:datatype="&xsd;double">0.90</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>   
+	<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&knowrob;widthOfObject"/>
+                <owl:hasValue rdf:datatype="&xsd;double">1.20</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>   
+
+  </owl:Class>
+
+<owl:NamedIndividual rdf:about="&knowrob;Table5">
+    <rdf:type rdf:resource="http://knowrob.org/kb/lab.owl#Table05"/>
+    <knowrob:describedInMap rdf:resource="http://knowrob.org/kb/lab.owl#LabMap"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="&knowrob;Transformation_Table_5">
+    <rdf:type rdf:resource="&knowrob;Transformation"/>
+    <knowrob:quaternion rdf:datatype="&xsd;string">1.0 0.0 0.0 0.0</knowrob:quaternion>
+    <knowrob:translation rdf:datatype="&xsd;string">55.00301 133.004 36.50023</knowrob:translation>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="&knowrob;SemanticMapPerceptionTable5">
+    <rdf:type rdf:resource="&knowrob;SemanticMapPerception"/>
+    <knowrob:startTime rdf:resource="http://knowrob.org/kb/lab.owl#timepoint_0"/>
+    <knowrob:eventOccursAt rdf:resource="&knowrob;Transformation_Table_5"/>
+    <knowrob:objectActedOn rdf:resource="&knowrob;Table5"/>
+</owl:NamedIndividual>
+
+<!-- Table 6 -->
+<owl:Class rdf:about="&knowrob;Table06"> 
+  <rdfs:subClassOf rdf:resource="&knowrob;SpatialThing-Localized"/> 
+   <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="&knowrob;pathToCadModel"/>
+      <owl:hasValue rdf:datatype="&xsd;string">package://iai_outdoor_models/models/Table_6.dae</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>   
+	<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&knowrob;heightOfObject"/>
+                <owl:hasValue rdf:datatype="&xsd;double">0.73</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>   
+	<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&knowrob;depthOfObject"/>
+                <owl:hasValue rdf:datatype="&xsd;double">1.20</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>   
+	<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&knowrob;widthOfObject"/>
+                <owl:hasValue rdf:datatype="&xsd;double">0.90</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>   
+
+  </owl:Class>
+
+<owl:NamedIndividual rdf:about="&knowrob;Table6">
+    <rdf:type rdf:resource="http://knowrob.org/kb/lab.owl#Table06"/>
+    <knowrob:describedInMap rdf:resource="http://knowrob.org/kb/lab.owl#LabMap"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="&knowrob;Transformation_Table_6">
+    <rdf:type rdf:resource="&knowrob;Transformation"/>
+    <knowrob:quaternion rdf:datatype="&xsd;string">1.0 0.0 0.0 0.0</knowrob:quaternion>
+    <knowrob:translation rdf:datatype="&xsd;string">175.003 133.004 36.50023</knowrob:translation>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="&knowrob;SemanticMapPerceptionTable6">
+    <rdf:type rdf:resource="&knowrob;SemanticMapPerception"/>
+    <knowrob:startTime rdf:resource="http://knowrob.org/kb/lab.owl#timepoint_0"/>
+    <knowrob:eventOccursAt rdf:resource="&knowrob;Transformation_Table_6"/>
+    <knowrob:objectActedOn rdf:resource="&knowrob;Table6"/>
+</owl:NamedIndividual>
+
+
+<!-- Table 7 -->
+<owl:Class rdf:about="&knowrob;Table07"> 
+  <rdfs:subClassOf rdf:resource="&knowrob;SpatialThing-Localized"/> 
+   <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="&knowrob;pathToCadModel"/>
+      <owl:hasValue rdf:datatype="&xsd;string">package://iai_outdoor_models/models/Table_7.dae</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>   
+	<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&knowrob;heightOfObject"/>
+                <owl:hasValue rdf:datatype="&xsd;double">0.85</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>   
+	<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&knowrob;depthOfObject"/>
+                <owl:hasValue rdf:datatype="&xsd;double">2.45</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>   
+	<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&knowrob;widthOfObject"/>
+                <owl:hasValue rdf:datatype="&xsd;double">0.80</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>   
+
+  </owl:Class>
+
+<owl:NamedIndividual rdf:about="&knowrob;Table7">
+    <rdf:type rdf:resource="http://knowrob.org/kb/lab.owl#Table07"/>
+    <knowrob:describedInMap rdf:resource="http://knowrob.org/kb/lab.owl#LabMap"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="&knowrob;Transformation_Table_7">
+    <rdf:type rdf:resource="&knowrob;Transformation"/>
+    <knowrob:quaternion rdf:datatype="&xsd;string">1.0 0.0 0.0 0.0</knowrob:quaternion>
+    <knowrob:translation rdf:datatype="&xsd;string">41.49495 -188.982 42.50019</knowrob:translation>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="&knowrob;SemanticMapPerceptionTable7">
+    <rdf:type rdf:resource="&knowrob;SemanticMapPerception"/>
+    <knowrob:startTime rdf:resource="http://knowrob.org/kb/lab.owl#timepoint_0"/>
+    <knowrob:eventOccursAt rdf:resource="&knowrob;Transformation_Table_7"/>
+    <knowrob:objectActedOn rdf:resource="&knowrob;Table7"/>
+</owl:NamedIndividual>
+
+<!-- Table 8 -->
+<owl:Class rdf:about="&knowrob;Table08"> 
+  <rdfs:subClassOf rdf:resource="&knowrob;SpatialThing-Localized"/> 
+   <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="&knowrob;pathToCadModel"/>
+      <owl:hasValue rdf:datatype="&xsd;string">package://iai_outdoor_models/models/Table_8.dae</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>   
+	<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&knowrob;heightOfObject"/>
+                <owl:hasValue rdf:datatype="&xsd;double">0.73</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>   
+	<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&knowrob;depthOfObject"/>
+                <owl:hasValue rdf:datatype="&xsd;double">1.60</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>   
+	<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&knowrob;widthOfObject"/>
+                <owl:hasValue rdf:datatype="&xsd;double">0.80</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>   
+
+  </owl:Class>
+
+<owl:NamedIndividual rdf:about="&knowrob;Table8">
+    <rdf:type rdf:resource="http://knowrob.org/kb/lab.owl#Table08"/>
+    <knowrob:describedInMap rdf:resource="http://knowrob.org/kb/lab.owl#LabMap"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="&knowrob;Transformation_Table_8">
+    <rdf:type rdf:resource="&knowrob;Transformation"/>
+    <knowrob:quaternion rdf:datatype="&xsd;string">1.0 0.0 0.0 0.0</knowrob:quaternion>
+    <knowrob:translation rdf:datatype="&xsd;string">81.99936 384.973 36.50023</knowrob:translation>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="&knowrob;SemanticMapPerceptionTable8">
+    <rdf:type rdf:resource="&knowrob;SemanticMapPerception"/>
+    <knowrob:startTime rdf:resource="http://knowrob.org/kb/lab.owl#timepoint_0"/>
+    <knowrob:eventOccursAt rdf:resource="&knowrob;Transformation_Table_8"/>
+    <knowrob:objectActedOn rdf:resource="&knowrob;Table8"/>
+</owl:NamedIndividual>
+
+<!-- Fridge -->
+<owl:Class rdf:about="&knowrob;Fridge"> 
+  <rdfs:subClassOf rdf:resource="&knowrob;SpatialThing-Localized"/> 
+   <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="&knowrob;pathToCadModel"/>
+      <owl:hasValue rdf:datatype="&xsd;string">package://iai_outdoor_models/models/Fridge.dae</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>   
+	<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&knowrob;heightOfObject"/>
+                <owl:hasValue rdf:datatype="&xsd;double">1.52</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>   
+	<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&knowrob;depthOfObject"/>
+                <owl:hasValue rdf:datatype="&xsd;double">0.62</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>   
+	<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&knowrob;widthOfObject"/>
+                <owl:hasValue rdf:datatype="&xsd;double">0.66</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>   
+
+  </owl:Class>
+
+<owl:NamedIndividual rdf:about="&knowrob;Fridge1">
+    <rdf:type rdf:resource="http://knowrob.org/kb/lab.owl#Fridge"/>
+    <knowrob:describedInMap rdf:resource="http://knowrob.org/kb/lab.owl#LabMap"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="&knowrob;Transformation_Fridge">
+    <rdf:type rdf:resource="&knowrob;Transformation"/>
+    <knowrob:quaternion rdf:datatype="&xsd;string">1.0 0.0 0.0 0.0</knowrob:quaternion>
+    <knowrob:translation rdf:datatype="&xsd;string">-166 -452 75.99992</knowrob:translation>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="&knowrob;SemanticMapPerceptionFridge">
+    <rdf:type rdf:resource="&knowrob;SemanticMapPerception"/>
+    <knowrob:startTime rdf:resource="http://knowrob.org/kb/lab.owl#timepoint_0"/>
+    <knowrob:eventOccursAt rdf:resource="&knowrob;Transformation_Fridge"/>
+    <knowrob:objectActedOn rdf:resource="&knowrob;Fridge1"/>
+</owl:NamedIndividual>
+
+<!-- Sink -->
+<owl:Class rdf:about="&knowrob;Sink"> 
+  <rdfs:subClassOf rdf:resource="&knowrob;SpatialThing-Localized"/> 
+   <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="&knowrob;pathToCadModel"/>
+      <owl:hasValue rdf:datatype="&xsd;string">package://iai_outdoor_models/models/sink.dae</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>   
+	<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&knowrob;heightOfObject"/>
+                <owl:hasValue rdf:datatype="&xsd;double">0.88</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>   
+	<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&knowrob;depthOfObject"/>
+                <owl:hasValue rdf:datatype="&xsd;double">2.03</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>   
+	<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&knowrob;widthOfObject"/>
+                <owl:hasValue rdf:datatype="&xsd;double">0.66</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>   
+
+  </owl:Class>
+
+<owl:NamedIndividual rdf:about="&knowrob;Sink1">
+    <rdf:type rdf:resource="http://knowrob.org/kb/lab.owl#Sink"/>
+    <knowrob:describedInMap rdf:resource="http://knowrob.org/kb/lab.owl#LabMap"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="&knowrob;Transformation_Sink">
+    <rdf:type rdf:resource="&knowrob;Transformation"/>
+    <knowrob:quaternion rdf:datatype="&xsd;string">1.0 0.0 0.0 0.0</knowrob:quaternion>
+    <knowrob:translation rdf:datatype="&xsd;string">-33.49911 -452 44.00026</knowrob:translation>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="&knowrob;SemanticMapPerceptionSink">
+    <rdf:type rdf:resource="&knowrob;SemanticMapPerception"/>
+    <knowrob:startTime rdf:resource="http://knowrob.org/kb/lab.owl#timepoint_0"/>
+    <knowrob:eventOccursAt rdf:resource="&knowrob;Transformation_Sink"/>
+    <knowrob:objectActedOn rdf:resource="&knowrob;Sink1"/>
+</owl:NamedIndividual>
+
+<!-- Oven -->
+<owl:Class rdf:about="&knowrob;Oven"> 
+  <rdfs:subClassOf rdf:resource="&knowrob;SpatialThing-Localized"/> 
+   <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="&knowrob;pathToCadModel"/>
+      <owl:hasValue rdf:datatype="&xsd;string">package://iai_outdoor_models/models/oven.dae</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>   
+	<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&knowrob;heightOfObject"/>
+                <owl:hasValue rdf:datatype="&xsd;double">1.52</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>   
+	<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&knowrob;depthOfObject"/>
+                <owl:hasValue rdf:datatype="&xsd;double">1.21</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>   
+	<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&knowrob;widthOfObject"/>
+                <owl:hasValue rdf:datatype="&xsd;double">0.66</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>   
+
+  </owl:Class>
+
+<owl:NamedIndividual rdf:about="&knowrob;Oven1">
+    <rdf:type rdf:resource="http://knowrob.org/kb/lab.owl#Oven"/>
+    <knowrob:describedInMap rdf:resource="http://knowrob.org/kb/lab.owl#LabMap"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="&knowrob;Transformation_Oven">
+    <rdf:type rdf:resource="&knowrob;Transformation"/>
+    <knowrob:quaternion rdf:datatype="&xsd;string">1.0 0.0 0.0 0.0</knowrob:quaternion>
+    <knowrob:translation rdf:datatype="&xsd;string">128.501 -452 76.00068</knowrob:translation>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="&knowrob;SemanticMapPerceptionOven">
+    <rdf:type rdf:resource="&knowrob;SemanticMapPerception"/>
+    <knowrob:startTime rdf:resource="http://knowrob.org/kb/lab.owl.owl#timepoint_0"/>
+    <knowrob:eventOccursAt rdf:resource="&knowrob;Transformation_Oven"/>
+    <knowrob:objectActedOn rdf:resource="&knowrob;Oven1"/>
+</owl:NamedIndividual>
+
+<!-- Ground -->
+<owl:Class rdf:about="&knowrob;Ground"> 
+  <rdfs:subClassOf rdf:resource="&knowrob;SpatialThing-Localized"/> 
+   <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="&knowrob;pathToCadModel"/>
+      <owl:hasValue rdf:datatype="&xsd;string">package://iai_outdoor_models/models/ground.dae</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>   
+	<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&knowrob;heightOfObject"/>
+                <owl:hasValue rdf:datatype="&xsd;double">0.50</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>   
+	<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&knowrob;depthOfObject"/>
+                <owl:hasValue rdf:datatype="&xsd;double">5.00</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>   
+	<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&knowrob;widthOfObject"/>
+                <owl:hasValue rdf:datatype="&xsd;double">9.10</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>   
+
+  </owl:Class>
+
+<owl:NamedIndividual rdf:about="&knowrob;Ground1">
+    <rdf:type rdf:resource="http://knowrob.org/kb/lab.owl#Ground"/>
+    <knowrob:describedInMap rdf:resource="http://knowrob.org/kb/lab.owl#LabMap"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="&knowrob;Transformation_Ground">
+    <rdf:type rdf:resource="&knowrob;Transformation"/>
+    <knowrob:quaternion rdf:datatype="&xsd;string">1.0 0.0 0.0 0.0</knowrob:quaternion>
+    <knowrob:translation rdf:datatype="&xsd;string">0 -29.99979 48.99991</knowrob:translation>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="&knowrob;SemanticMapPerceptionGround">
+    <rdf:type rdf:resource="&knowrob;SemanticMapPerception"/>
+    <knowrob:startTime rdf:resource="http://knowrob.org/kb/lab.owl#timepoint_0"/>
+    <knowrob:eventOccursAt rdf:resource="&knowrob;Transformation_Ground"/>
+    <knowrob:objectActedOn rdf:resource="&knowrob;Ground1"/>
+
+</owl:NamedIndividual>
+</rdf:RDF>
