@@ -159,9 +159,9 @@ target_link_libraries(ned2wgs_server ${catkin_LIBRARIES})
 add_dependencies(ned2wgs_server world_mission_gencpp)
 
 ## Declare a C++ executable
-add_executable(hl_client_test src/nodes/hl_client_test.cpp)
-target_link_libraries(hl_client_test ${catkin_LIBRARIES})
-add_dependencies(hl_client_test world_mission_gencpp)
+#add_executable(hl_client_test src/nodes/hl_client_test.cpp)
+#target_link_libraries(hl_client_test ${catkin_LIBRARIES})
+#add_dependencies(hl_client_test world_mission_gencpp)
 
 #############
 ## Install ##
