@@ -1,0 +1,98 @@
+<?xml version="1.0"?>
+<sdf version="1.4">
+  <world name="mountain_world">
+    <physics type="ode">
+     <!-- <gravity>0 0 -9.8</gravity>-->
+     <max_step_size>0.001</max_step_size>
+    </physics>
+
+    <scene>
+      <sky>
+        <clouds>
+          <speed>12</speed>
+        </clouds>
+      </sky>
+    </scene>
+
+    <gui>
+      <camera name="my_camera">
+        <pose>3 0.1 1.5 0 0 3.14</pose>
+      </camera>
+    </gui>
+
+  <!-- <include>
+      <uri>model://ground</uri>
+    </include> -->
+
+    <include>
+      <uri>model://sun</uri>
+    </include>
+
+    <include>
+      <name>ground</name>
+      <uri>model://ground</uri>
+  <pose>0 0 0 0 0 0</pose>
+    </include>
+
+
+
+    <include>
+      <name>fridge</name>
+      <uri>model://fridge</uri>
+      <pose>19.99 6.41 0 0 0 0</pose>
+    </include>
+
+ <include>
+      <name>oven</name>
+      <uri>model://oven</uri>
+      <pose>11.99 14.99 0 0 0 0</pose>
+    </include>
+
+
+  <include>
+      <name>sink</name>
+      <uri>model://sink</uri>
+      <pose>19.02 10.99 0 0 0 0</pose>
+    </include>
+ <include>
+      <name>table_1</name>
+      <uri>model://table_1</uri>
+      <pose>18.99 14.99 0 0 0 0</pose>
+    </include>
+ <include>
+      <name>table_3</name>
+      <uri>model://table_3</uri>
+      <pose>15.99 12.99 0 0 0 0</pose>
+    </include>
+
+
+ <include>
+      <name>table_4</name>
+      <uri>model://table_4</uri>
+      <pose>13 9.96 0 0 0 0</pose>
+    </include>
+ <include>
+      <name>table_5</name>
+      <uri>model://table_5</uri>
+      <pose>6.99 -13.45 0 0 0 0</pose>
+    </include>
+ <include>
+      <name>table_6</name>
+      <uri>model://table_6</uri>
+      <pose>-0.56 -0.5 0 0 0 0</pose>
+    </include>
+
+ <include>
+      <name>table_7</name>
+      <uri>model://table_7</uri>
+      <pose>-13.99 -18.04 0 0 0 0</pose>
+    </include>
+
+ <include>
+      <name>table_8</name>
+      <uri>model://table_8</uri>
+      <pose>-17.03 -16.61 0 0 0 0</pose>
+    </include>
+  </world>
+</sdf>
+
